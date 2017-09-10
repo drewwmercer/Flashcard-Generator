@@ -1,0 +1,14 @@
+{
+  "name": "flashcard-generator",
+  "version": "1.0.0",
+  "description": "flashcard generator package",
+  "main": "BasicCard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Drew Mercer",
+  "license": "ISC",
+  "dependencies": {
+    "inquirer": "^3.2.3"
+  }
+}
