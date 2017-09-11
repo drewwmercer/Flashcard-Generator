@@ -15,6 +15,6 @@ function ClozeCard(text, cloze) {
         };
         fs.appendFile('log.txt', JSON.stringify(data) + ';', 'utf8', function(error) {
                 if (error) throw error;
-            }
-        }
+            };
+        };
     }
