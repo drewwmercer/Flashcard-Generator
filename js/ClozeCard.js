@@ -1,8 +1,8 @@
 var fs = require('fs');
 
-module.exports = ClozeFlash;
+module.exports = ClozeCard;
 
-function ClozeFlash(text, cloze) {
+function ClozeCard(text, cloze) {
     this.text = text;
     cloze = this.cloze;
     this.clozeDelete = this.text.replace(this.cloze, '_______');
