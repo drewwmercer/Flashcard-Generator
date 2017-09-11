@@ -1,8 +1,8 @@
 var fs = require('fs');
 
-module.exports = BasicFlash;
+module.exports = BasicCard;
 
-function BasicFlash(f, b) {
+function BasicCard(f, b) {
     this.f = front;
     this.b = back;
 
