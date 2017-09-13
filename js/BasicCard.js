@@ -1,20 +1,31 @@
-var fs = require('fs');
+var frontArray = [],
+    backArray = [],
+    fullBasicArray = [];
 
-module.exports = BasicCard;
+function BasicCard(front, back) {
+    if (this instanceof BasicCard) {
+        this.front = front;
+        this.back = back;
 
-function BasicCard(f, b) {
-    this.f = front;
-    this.b = back;
+        this.push = () => {
+            frontArray.push(this.front);
+            backArray.push(this.back);
+        }
+    } else {
 
-    this.create = function() {
-        var content = {
-            front: this.front,
-            back: this.back,
-            type: 'basic'
-        };
-
-        fs.appendFile('log.txt', JSON.stringify(data) + ';', 'utf8', function(error) {
-            if (error) throw error;
-        });
-    };
+        return new BasicCard(front, back)
+    }
 }
+var george = BasicCard("Who was the president (the first one from 1789-1797) who lived in Mount Vernon?", "George Washington"),
+    andrew = BasicCard("What president succeeded Abraham Lincoln when he was assassinated?", "Andrew Johnson"),
+    brown = BasicCard("Whose raid on Harper's Ferry led to further tensions before the war?", "John Brown"),
+    phila = BasicCard(" In what city was the Declaration of Independence signed?", "Philadelphia");
+
+fullBasicArray.push(frontArray);
+fullBasicArray.push(backArray);
+george.push();
+andrew.push();
+brown.push();
+phila.push();
+
+module.exports = fullBasicArray;
