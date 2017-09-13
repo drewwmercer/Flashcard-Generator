@@ -16,7 +16,7 @@ function InitialPrompt() {
     inquirer.prompt([{
             type: 'list',
             name: 'cardstyle',
-            message: 'Do you want to play create your own cards of play with the prepared cards?',
+            message: 'Do you want to create your own cards of play with the prepared cards?',
             choices: [
             'Create Cards', 
             'Play with Prepared Cards'
@@ -56,12 +56,12 @@ function CreateBasicCards() {
     inquirer.prompt([{
                 type: "input",
                 name: "front",
-                message: "Enter the information for the front of the card?"
+                message: "Enter the information for the front of the card:"
             },
             {
                 type: "input",
                 name: "back",
-                message: "Enter the information for the back of the card?"
+                message: "Enter the information for the back of the card:"
             }
         ])
         .then(function(ans) {
@@ -76,12 +76,12 @@ function CreateClozeCards() {
     inquirer.prompt([{
                 type: "input",
                 name: "question",
-                message: "Enter the information for the card?"
+                message: "Enter the full information for the card:"
             },
             {
                 type: "input",
                 name: "cloze",
-                message: "Enter the information for the cloze?"
+                message: "Enter the portion for the cloze:"
             }
         ])
         .then(function(ans) {
@@ -92,7 +92,7 @@ function CreateClozeCards() {
                 userInqAnswerArray.push(newCard.cloze);
                 CreateAnotherOrPLay()
             } else {
-                console.log("Make sure the cloze matches a part of the question");
+                console.log("Oops, make sure the cloze matches a part of the question!");
                 CreateClozeCards();
             }
         });
@@ -102,7 +102,7 @@ function CreateAnotherOrPLay() {
     inquirer.prompt([{
         type: "list",
         name: "createOrPlay",
-        message: "Do you want to make another card or play with the cards you made?",
+        message: "Do you want to make another card, or play with the card(s) you made?",
         choices: ["Create Another Card", "Play with My New Cards"]
     }]).then(function(answer) {
         if (answer.createOrPlay === "Create Another Card") {
@@ -123,7 +123,7 @@ function StartPreparedGame() {
     inquirer.prompt([{
             type: 'list',
             name: 'cardstyle',
-            message: 'What kind of cards you want to play with basic or cloze?',
+            message: 'What kind of cards you want to play with, basic or cloze?',
             choices: ['Basic Card', 'Cloze Card']
         }])
         .then(function(answer) {
@@ -147,12 +147,12 @@ function askQuestions() {
             }])
             .then(function(ans) {
                 if (ans.input.toLowerCase() === inqAnswer[questionCount].toLowerCase()) {
-                    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                    console.log("++++++++++++++++++++++++++++++++++++++++");
                     console.log("You got it right!!");
-                    console.log("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+                    console.log("++++++++++++++++++++++++++++++++++++++++");
                     correctCount++;
                 } else {
-                    console.log("Noooooooooooooooooooooooooooooooooooooo");
+                    console.log("----------------------------------------");
                     console.log("Wrong, the answer is " + inqAnswer[questionCount]);
                     console.log("----------------------------------------");
                 }
@@ -180,7 +180,7 @@ function playAgain() {
         if (response.confirm) {
             resetGame();
         } else {
-            console.log("Bye Bye");
+            console.log("Goodbye");
         }
     });
 }
