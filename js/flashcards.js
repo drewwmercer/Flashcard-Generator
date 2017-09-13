@@ -17,7 +17,10 @@ function InitialPrompt() {
             type: 'list',
             name: 'cardstyle',
             message: 'Do you want to play create your own cards of play with the prepared cards?',
-            choices: ['Create Cards', 'Play with Prepared Card']
+            choices: [
+            'Create Cards', 
+            'Play with Prepared Cards'
+            ]
         }])
         .then(function(answer) {
             createPlay = answer.cardstyle;
@@ -34,7 +37,10 @@ function CreateCards() {
             type: 'list',
             name: 'cardstyle',
             message: 'Do you want to create basic or cloze cards?',
-            choices: ['Basic Card', 'Cloze Card']
+            choices: [
+            'Basic Card', 
+            'Cloze Card'
+            ]
         }])
         .then(function(answer) {
             createCardType = answer.cardstyle;
