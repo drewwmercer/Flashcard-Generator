@@ -2,7 +2,7 @@ var inquirer = require('inquirer');
 var fullBasicArray = require('./BasicCard');
 var fullClozeArray = require('./ClozeCard');
 var UserBasicCard = require('./UserBasicCard');
-var UserClozeCard = require('./UserClozedCard');
+var UserClozeCard = require('./UserClozeCard');
 var questionCount = 0;
 var correctCount = 0;
 var createPlay;
@@ -155,10 +155,10 @@ function askQuestions() {
             });
     } else {
         if ((correctCount / inqQuestion.length) >= .75) {
-            console.log("Congratulations!! You got " + correctCount + " right out of " + inqQuestion.length + ". Your Mom would be proud!");
+            console.log("Congrats! You got " + correctCount + " right out of " + inqQuestion.length + "!");
         } else {
 
-            console.log("That's sad. You only got " + correctCount + " right out of " + inqQuestion.length + ". You should ask for a tuition refund");
+            console.log("You only got " + correctCount + " right out of " + inqQuestion.length + ".");
         }
         playAgain();
     }
