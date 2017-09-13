@@ -23,7 +23,7 @@ function InitialPrompt() {
             createPlay = answer.cardstyle;
             if (answer.cardstyle == 'Create Cards') {
                 CreateCards();
-            } else if (answer.cardstyle == 'Play with Prepared Card') {
+            } else if (answer.cardstyle == 'Play with Prepared Cards') {
                 StartPreparedGame();
             }
         });

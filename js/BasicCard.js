@@ -1,6 +1,6 @@
-var frontArray = [],
-    backArray = [],
-    fullBasicArray = [];
+var frontArray = [];
+var backArray = [];
+var fullBasicArray = [];
 
 function BasicCard(front, back) {
     if (this instanceof BasicCard) {
