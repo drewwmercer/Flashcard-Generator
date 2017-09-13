@@ -1,6 +1,6 @@
-var questionArray = [],
-    clozeArray = [],
-    fullCLozeArray = [];
+var questionArray = [];
+var clozeArray = [];
+var fullCLozeArray = [];
 
 function ClozeCard(question, cloze) {
     if (this instanceof ClozeCard) {
